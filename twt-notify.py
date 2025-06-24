@@ -68,7 +68,7 @@ class tweet_scraper:
             headers = {"Content-Type": "application/json"}
             response = requests.post(webhook_url, json=payload, headers=headers, timeout=10)
             response.raise_for_status()
-            print(f"Sent tweet - {tweet_info['id']} - to Discord")
+            print(f"Sent Tweet - {tweet_info['id']} - to Discord")
             time.sleep(1)
         except requests.exceptions.HTTPError as e:
             print(f"An error has occured! - {e.response.status_code} - {e.response.text}")
